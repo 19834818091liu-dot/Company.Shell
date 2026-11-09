@@ -1,0 +1,30 @@
+﻿<mah:MetroWindow
+    x:Class="Company.Shell.Views.ShellView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Company.Shell.Views"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:core="clr-namespace:Company.Core.Models;assembly=Company.Core"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:vm="clr-namespace:Company.Shell.ViewModels"
+    Title="ShellView"
+    Width="1500"
+    Height="850"
+    d:DataContext="{d:DesignInstance vm:ShellViewModel}"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    ShowTitleBar="False"
+    FontSize="16"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <ContentControl prism:RegionManager.RegionName="{x:Static core:Names.ShellRegion}" />
+    </Grid>
+</mah:MetroWindow>

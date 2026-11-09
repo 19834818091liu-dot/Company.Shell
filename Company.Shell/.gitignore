@@ -1,0 +1,11 @@
+bin/
+obj/
+x64/
+packages/
+.vs/
+*.user
+*.suo
+*.dll
+*.lib
+*.pdb
+logs/

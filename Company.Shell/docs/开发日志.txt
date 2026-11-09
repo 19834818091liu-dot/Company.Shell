@@ -1,0 +1,25 @@
+﻿
+
+2025.3.7 dll复制命令格式
+
+xcopy "$(ProjectDir)\bin\Debug\$(ProjectName).dll" "$(SolutionDir)\Company.Shell\bin\Debug\" /Y /S
+xcopy "$(ProjectDir)\bin\Release\$(ProjectName).dll" "$(SolutionDir)\Company.Shell\bin\Release\" /Y /S
+
+
+xcopy "$(ProjectDir)\bin\Debug\dll\*.dll" "$(SolutionDir)\Company.Shell\bin\Debug\" /Y /S
+xcopy "$(ProjectDir)\bin\Release\dll\*.dll" "$(SolutionDir)\Company.Shell\bin\Release\" /Y /S
+
+
+2025.3.6  安装组件如下
+
+* Prism.Unity   8.1.97
+* ReactiveUI.Fody 19.5.41
+* ReactiveUI.WPF  19.5.41 （Company.Shell项目必须安装）
+  ReactiveUI 19.5.41
+  MahApps.Metro 2.4.1.0
+  MahApps.Metro.IconPacks
+
+(Company.Application.Designer也要安装下面这两个)
+MahApps.Metro 2.4.1.0
+MahApps.Metro.IconPacks
+

@@ -1,0 +1,188 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  主菜单样式  -->
+    <Style x:Key="RadioButton.Menu.Style" TargetType="RadioButton">
+        <Setter Property="Background" Value="#3B4446" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="MinWidth" Value="120" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Background="{TemplateBinding Background}">
+                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <ContentControl
+                                Grid.Column="0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Content="{TemplateBinding Tag}" />
+                            <ContentControl
+                                Grid.Column="1"
+                                Margin="10,0"
+                                VerticalAlignment="Center"
+                                Foreground="{TemplateBinding Foreground}"
+                                Content="{TemplateBinding Content}" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="#00AE42" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#2B6DF7" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  图像操作按钮样式  -->
+    <Style x:Key="RadioButton.Preview.Style" TargetType="RadioButton">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Background="Transparent">
+                        <ContentControl VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" Content="{TemplateBinding Content}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Foreground" Value="#00AE42" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="#2B6DF7" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  系统设置菜单样式  -->
+    <Style x:Key="RadioButton.Menu.Config.Style" TargetType="RadioButton">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Height" Value="45" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Background="{TemplateBinding Background}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="50" />
+                            </Grid.ColumnDefinitions>
+                            <ContentControl
+                                Grid.Column="2"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Content="{TemplateBinding Tag}" />
+                            <ContentControl
+                                Grid.Column="1"
+                                Margin="10,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Content="{TemplateBinding Content}"
+                                Foreground="{TemplateBinding Foreground}" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="#F5F5F5" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush>
+                            <GradientStop Offset="0" Color="#CCE4F7" />
+                            <GradientStop Offset="1" Color="#AFA3EC" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground" Value="White" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  选择轨道类型的样式  -->
+    <Style x:Key="RadioButton.TapeWidth.Style" TargetType="RadioButton">
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <!--  替换它默认的圆圈 + 文字样式。  -->
+                <ControlTemplate TargetType="RadioButton">
+                    <Border
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}"
+                        MinWidth="{TemplateBinding MinWidth}"
+                        MinHeight="{TemplateBinding MinHeight}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <ContentControl Margin="0,0,10,0" Foreground="{TemplateBinding Foreground}" Content="{TemplateBinding Content}" />
+                            <Border
+                                x:Name="border"
+                                Height="1"
+                                Margin="2,5,10,5"
+                                VerticalAlignment="Bottom"
+                                Panel.ZIndex="99" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!--  选中时的背景颜色作用于画横线的border上，高度为1  -->
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="border" Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush>
+                                        <GradientStop Offset="0" Color="#00AE42" />
+                                        <GradientStop Offset="1" Color="#00AE99" />
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <!--  未选中的背景颜色作用于最外层的Border  -->
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="Background" Value="Transparent" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--  这里触发的是radiobutton  -->
+        <Style.Triggers>
+            <!--  鼠标悬浮在radionbutton时背景颜色发生改变  -->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#C7E6EC" />
+            </Trigger>
+            <!--  鼠标选中时字体大小、文字颜色发生改变  -->
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="Foreground">
+                    <Setter.Value>
+                        <LinearGradientBrush>
+                            <GradientStop Offset="0" Color="#00AE42" />
+                            <GradientStop Offset="1" Color="#00AE99" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

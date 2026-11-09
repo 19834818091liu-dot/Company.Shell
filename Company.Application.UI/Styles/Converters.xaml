@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:converters="clr-namespace:Company.Application.UI.Converters">
+    <converters:BooleanToColorConverter x:Key="BooleanToColorConverter" />
+    <converters:RoleToVisibilityConverter x:Key="RoleToVisibilityConverter" />
+    <!--<converters:CppPointToStringConverter x:Key="CppPointToStringConverter" />
+    <converters:Int32ToElementTypeConverter x:Key="Int32ToElementTypeConverter" />
+    <converters:Int32ToTapeTypeConverter x:Key="Int32ToTapeTypeConverter" />
+    <converters:RunToVisibleConverter x:Key="RunToVisibleConverter" />
+    <converters:NGToRedColorConverter x:Key="NGToRedColorConverter" />
+    <converters:TapeWidthToDisplay x:Key="TapeWidthToDisplay" />
+    <converters:RunStopTextConverter x:Key="RunStopTextConverter" />-->
+</ResourceDictionary>
